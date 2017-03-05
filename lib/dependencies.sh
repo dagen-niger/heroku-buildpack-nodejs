@@ -25,6 +25,11 @@ run_if_present() {
   fi
 }
 
+npm_overloaded_registry() {
+  echo "Installing by npm with forced registry because of https://github.com/yarnpkg/yarn/issues/1148"
+  npm install --unsafe-perm --production --registry=https://registry.npmjs.org/ 2>&1
+}
+
 yarn_node_modules() {
   local build_dir=${1:-}
 
