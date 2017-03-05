@@ -27,6 +27,8 @@ run_if_present() {
 
 npm_overloaded_registry() {
   echo "Installing by npm with forced registry because of https://github.com/yarnpkg/yarn/issues/1148"
+  # css-framework used to be a private package :)
+  npm install css-framework --registry https://repo.fury.io/dagen-niger/
   npm install --unsafe-perm --production --registry=https://registry.npmjs.org/ 2>&1
 }
 
