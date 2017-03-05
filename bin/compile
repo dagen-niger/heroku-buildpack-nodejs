@@ -129,8 +129,9 @@ restore_cache() {
   fi
 }
 
-header "Restoring cache"
-restore_cache | output "$LOG_FILE"
+# header "Restoring cache"
+# restore_cache | output "$LOG_FILE"
+echo "Cache check is rejected"
 
 build_dependencies() {
   run_if_present 'heroku-prebuild'
