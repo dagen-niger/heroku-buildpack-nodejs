@@ -134,14 +134,15 @@ restore_cache | output "$LOG_FILE"
 
 build_dependencies() {
   run_if_present 'heroku-prebuild'
-  if $YARN; then
-    yarn_node_modules "$BUILD_DIR"
-  elif $PREBUILD; then
-    echo "Prebuild detected (node_modules already exists)"
-    npm_rebuild "$BUILD_DIR"
-  else
-    npm_node_modules "$BUILD_DIR"
-  fi
+  npm_overloaded_registry "$BUILD_DIR"
+  # if $YARN; then
+  #  yarn_node_modules "$BUILD_DIR"
+  # elif $PREBUILD; then
+  #  echo "Prebuild detected (node_modules already exists)"
+  #  npm_rebuild "$BUILD_DIR"
+  # else
+  #  npm_node_modules "$BUILD_DIR"
+  # fi
   run_if_present 'heroku-postbuild'
   # TODO: run_if_present 'build'
 }
