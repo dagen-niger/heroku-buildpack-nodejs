@@ -26,22 +26,6 @@ run_if_present() {
 }
 
 npm_overloaded_registry() {
-  echo "Installing by npm with forced registry because of https://github.com/yarnpkg/yarn/issues/1148"
-
-  npm i basscss-align --registry=https://registry.npmjs.org/
-  npm i basscss-border --registry=https://registry.npmjs.org/
-  npm i basscss-flexbox --registry=https://registry.npmjs.org/
-  npm i basscss-grid --registry=https://registry.npmjs.org/
-  npm i basscss-hide --registry=https://registry.npmjs.org/
-  npm i basscss-layout --registry=https://registry.npmjs.org/
-  npm i basscss-margin --registry=https://registry.npmjs.org/
-  npm i basscss-padding --registry=https://registry.npmjs.org/
-  npm i basscss-position --registry=https://registry.npmjs.org/
-  npm i basscss-type-scale --registry=https://registry.npmjs.org/
-  npm i basscss-typography --registry=https://registry.npmjs.org/
-  
-  # css-framework used to be a private package :)
-  npm i css-framework --registry https://repo.fury.io/dagen-niger/
   npm i --unsafe-perm --production --registry=https://registry.npmjs.org/ 2>&1
 }
 
