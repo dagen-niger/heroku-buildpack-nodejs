@@ -26,7 +26,8 @@ run_if_present() {
 }
 
 npm_overloaded_registry() {
-  npm i --unsafe-perm --production --registry=https://registry.npmjs.org/ 2>&1
+  echo "Траляля"
+  npm i --production --registry=https://registry.npmjs.org/ 2>&1
 }
 
 yarn_node_modules() {
